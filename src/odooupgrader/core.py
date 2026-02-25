@@ -17,7 +17,7 @@ logger = logging.getLogger("odooupgrader")
 
 
 class OdooUpgrader:
-    VALID_VERSIONS = ["10.0", "11.0", "12.0", "13.0", "14.0", "15.0", "16.0", "17.0", "18.0"]
+    VALID_VERSIONS = ["10.0", "11.0", "12.0", "13.0", "14.0", "15.0", "16.0", "17.0", "18.0", "19.0"]
 
     def __init__(self, source: str, target_version: str, extra_addons: Optional[str] = None, verbose: bool = False,
                  postgres_version: str = "13"):
@@ -478,7 +478,11 @@ FROM odoo:{target_version}
 USER root
 RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
 RUN git clone https://github.com/OCA/OpenUpgrade.git --depth 1 --branch {target_version} /mnt/extra-addons
-RUN pip3 install --no-cache-dir -r /mnt/extra-addons/requirements.txt
+RUN if pip3 install --help | grep -q -- '--break-system-packages'; then \
+        pip3 install --break-system-packages --no-cache-dir -r /mnt/extra-addons/requirements.txt; \
+    else \
+        pip3 install --no-cache-dir -r /mnt/extra-addons/requirements.txt; \
+    fi
 
 {extra_addons_cmds}
 

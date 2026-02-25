@@ -220,6 +220,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📈 Changelog
 
+### Version 0.3.0
+
+- ✅ Added support for Odoo 19.0
+
 ### Version 0.2.0
 
 - ✨ Added custom addons support via `--extra-addons` option
