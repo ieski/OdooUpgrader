@@ -5,10 +5,12 @@ on:
     branches: [ "main", "dev" ]
     paths:
       - "src/**"
+      - ".github/workflows/**"
   pull_request:
-    branches: [ "main", "dev" ]
+    branches: [ "main" ]
     paths:
       - "src/**"
+      - ".github/workflows/**"
 
 jobs:
   smoke-test:
