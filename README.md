@@ -5,7 +5,7 @@
 [![Downloads](https://static.pepy.tech/badge/odooupgrader)](https://pepy.tech/project/odooupgrader)
 
 
-Professional command-line tool for automating Odoo database upgrades using [OCA's OpenUpgrade](https://github.com/OCA/OpenUpgrade) framework. Seamlessly upgrade your Odoo databases from version 10.0 through 18.0 with a single command.
+Professional command-line tool for automating Odoo database upgrades using [OCA's OpenUpgrade](https://github.com/OCA/OpenUpgrade) framework. Seamlessly upgrade your Odoo databases from version 10.0 through 19.0 with a single command.
 
 ## ✨ Features
 
@@ -109,14 +109,14 @@ odooupgrader \
 
 ## 🎯 Command-Line Options
 
-| Option | Required | Description |
-|--------|----------|-------------|
-| `--source` | ✅ | Path to local `.zip`/`.dump` file or URL to download |
-| `--version` | ✅ | Target Odoo version (10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0) |
-| `--extra-addons` | ❌ | Custom addons location: local folder, local `.zip` file, or URL to `.zip` file |
-| `--postgres-version` | ❌ | PostgreSQL version for the database container (default: 13) |
-| `--verbose` | ❌ | Enable verbose logging output |
-| `--log-file` | ❌ | Path to save detailed log file |
+| Option | Required | Description                                                                      |
+|--------|----------|----------------------------------------------------------------------------------|
+| `--source` | ✅ | Path to local `.zip`/`.dump` file or URL to download                             |
+| `--version` | ✅ | Target Odoo version (10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0) |
+| `--extra-addons` | ❌ | Custom addons location: local folder, local `.zip` file, or URL to `.zip` file   |
+| `--postgres-version` | ❌ | PostgreSQL version for the database container (default: 13)                      |
+| `--verbose` | ❌ | Enable verbose logging output                                                    |
+| `--log-file` | ❌ | Path to save detailed log file                                                   |
 
 ## 📄 How It Works
 
@@ -190,7 +190,7 @@ custom_addons/
 
 ## 📚 Supported Versions
 
-This tool supports upgrading Odoo databases from version 10.0 through 18.0. The upgrade paths and compatibility are determined by the [OCA OpenUpgrade project](https://github.com/OCA/OpenUpgrade), which maintains migration scripts for each Odoo version.
+This tool supports upgrading Odoo databases from version 10.0 through 19.0. The upgrade paths and compatibility are determined by the [OCA OpenUpgrade project](https://github.com/OCA/OpenUpgrade), which maintains migration scripts for each Odoo version.
 
 ## 🤝 Contributing
 
